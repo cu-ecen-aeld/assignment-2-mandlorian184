@@ -14,8 +14,8 @@ echo "starting test with SKIP_BUILD=\"${SKIP_BUILD}\" and DO_VALIDATE=\"${DO_VAL
 logfile=test.sh.log
 # See https://stackoverflow.com/a/3403786
 # Place stdout and stderr in a log file
-exec > >(tee -i -a "$logfile") 2> >(tee -i -a "$logfile" >&2)
-
+#exec > >(tee -i -a "$logfile") 2> >(tee -i -a "$logfile" >&2)
+ exec > >(tee -i -a "$logfile") 2>&1
 echo "Running test with user $(whoami)"
 
 set +e
